@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Ping Test</title></head>
+<body>
+  <h1>Ping /api/ping</h1>
+  <button id="btn">Ping</button>
+  <pre id="out">Click the button to test.</pre>
+  <script>
+    document.getElementById('btn').onclick = async () => {
+      const r = await fetch('/api/ping');
+      const j = await r.json();
+      document.getElementById('out').textContent = JSON.stringify(j, null, 2);
+    };
+  </script>
+</body>
+</html>
