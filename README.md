@@ -2,7 +2,6 @@
 
 A full-stack travel booking web application built with the MEAN stack (MongoDB, Express, Angular, Node.js). The app supports two distinct frontend architectures — a server-rendered customer-facing site and an Angular SPA for administrative management.
 
-![App Screenshot](travel.png)
 
 ## 🛠️ Tech Stack
 
