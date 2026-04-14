@@ -1,0 +1,13 @@
+<h1>{{title}}</h1>
+
+<div class="trips-container">
+  {{#each trips}}
+    <article class="trip-card">
+      <h2>{{this.destination}}</h2>
+      <p>{{this.description}}</p>
+      <p><strong>Price:</strong> {{this.price}}</p>
+      <p><strong>Duration:</strong> {{this.duration}}</p>
+      <p><strong>Departure:</strong> {{this.departureDate}}</p>
+    </article>
+  {{/each}}
+</div>

@@ -1,0 +1,48 @@
+<form (ngSubmit)="onSave()" #editForm="ngForm" class="row g-3">
+
+  <div class="col-md-4">
+    <label class="form-label">Code (read only)</label>
+    <input class="form-control" name="code" [(ngModel)]="trip.code" readonly>
+  </div>
+
+  <div class="col-md-4">
+    <label class="form-label">Name</label>
+    <input class="form-control" name="name" [(ngModel)]="trip.name" required>
+  </div>
+
+  <div class="col-md-4">
+    <label class="form-label">Destination</label>
+    <input class="form-control" name="destination" [(ngModel)]="trip.destination" required>
+  </div>
+
+  <div class="col-md-3">
+    <label class="form-label">Length (days)</label>
+    <input type="number" class="form-control" name="length" [(ngModel)]="trip.length">
+  </div>
+
+  <div class="col-md-3">
+    <label class="form-label">Start Date</label>
+    <input type="date" class="form-control" name="start" [(ngModel)]="trip.start">
+  </div>
+
+  <div class="col-md-3">
+    <label class="form-label">Resort</label>
+    <input class="form-control" name="resort" [(ngModel)]="trip.resort">
+  </div>
+
+  <div class="col-md-3">
+    <label class="form-label">Price per Person</label>
+    <input type="number" class="form-control" name="perPerson" [(ngModel)]="trip.perPerson">
+  </div>
+
+  <div class="col-12">
+    <label class="form-label">Description</label>
+    <textarea class="form-control" rows="2" name="description" [(ngModel)]="trip.description"></textarea>
+  </div>
+
+  <div class="col-12 mt-2">
+    <button class="btn btn-success me-2" type="submit" [disabled]="editForm.invalid">Save</button>
+    <button class="btn btn-secondary" type="button" (click)="onCancel()">Cancel</button>
+  </div>
+
+</form>

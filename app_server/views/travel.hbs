@@ -1,0 +1,24 @@
+<h1>Travel</h1>
+<h1>Travel</h1>
+
+<div id="contents">
+  <div id="main">
+    {{!-- Loop over the trips array passed from travel.js --}}
+    {{#each trips}}
+      <div class="box">
+        <div>
+          <div>
+            <h3>{{destination}}</h3>
+
+            <p>{{description}}</p>
+
+            <p><strong>Price:</strong> {{price}}</p>
+            <p><strong>Duration:</strong> {{duration}}</p>
+            <p><strong>Departure:</strong> {{departureDate}}</p>
+          </div>
+        </div>
+      </div>
+      <hr>
+    {{/each}}
+  </div>
+</div>

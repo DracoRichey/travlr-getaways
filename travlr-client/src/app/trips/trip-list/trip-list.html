@@ -1,0 +1,80 @@
+<div class="container mt-4">
+
+  <!-- Add Trip Form -->
+  <h2 class="mb-3">Add a New Trip</h2>
+
+  <form (ngSubmit)="onAddTrip()" #tripForm="ngForm" class="row g-3 mb-4">
+
+    <div class="col-md-4">
+      <label class="form-label">Code / Destination</label>
+      <input
+        type="text"
+        class="form-control"
+        name="code"
+        [(ngModel)]="newTrip.code">
+    </div>
+
+    <div class="col-md-4">
+      <label class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="name"
+        [(ngModel)]="newTrip.name">
+    </div>
+
+    <div class="col-md-4">
+      <label class="form-label">Price</label>
+      <input
+        type="text"
+        class="form-control"
+        name="price"
+        [(ngModel)]="newTrip.price">
+    </div>
+
+    <div class="col-12">
+      <label class="form-label">Description</label>
+      <textarea
+        class="form-control"
+        rows="2"
+        name="description"
+        [(ngModel)]="newTrip.description"></textarea>
+    </div>
+
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">
+        Add Trip
+      </button>
+    </div>
+  </form>
+
+  <!-- Trip Cards -->
+  <h2 class="mb-3">Trips</h2>
+
+  <div class="row" *ngIf="trips && trips.length; else noTrips">
+    <div class="col-md-4 mb-3" *ngFor="let trip of trips">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">
+            {{ trip.name || trip.destination }}
+          </h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            {{ trip.duration || (trip.length + ' days') }}
+          </h6>
+          <p class="card-text">
+            <strong>Price:</strong> {{ trip.price || ('$' + trip.perPerson) }}<br>
+            <strong>Departure:</strong> {{ trip.departureDate || (trip.start | date) }}
+          </p>
+          <p class="card-text">
+            {{ trip.description }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noTrips>
+    <p>No trips available.</p>
+  </ng-template>
+
+</div>

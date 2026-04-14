@@ -1,0 +1,16 @@
+[
+  {
+    "destination": "Paris Getaway",
+    "description": "Enjoy 5 nights in Paris with guided tours and free breakfast.",
+    "price": "$1,200",
+    "duration": "5 nights",
+    "departureDate": "2025-05-10"
+  },
+  {
+    "destination": "Tokyo Adventure",
+    "description": "Explore Tokyo with a local guide and visit popular districts.",
+    "price": "$1,800",
+    "duration": "7 nights",
+    "departureDate": "2025-06-15"
+  }
+]
